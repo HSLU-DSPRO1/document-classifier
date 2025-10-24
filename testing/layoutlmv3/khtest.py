@@ -9,7 +9,7 @@ from transformers import (
     Trainer,
 )
 import evaluate
-
+from PIL import Image
 # --------------------------------------------------------------------
 # Environment setup
 # --------------------------------------------------------------------
@@ -46,12 +46,22 @@ model = LayoutLMv3ForSequenceClassification.from_pretrained(
 # --------------------------------------------------------------------
 # Preprocessing
 # --------------------------------------------------------------------
+
+print(dataset["train"].features)
+
 def preprocess(batch):
-    encodings = processor(images=batch["image"], return_tensors="pt")
-    return {k: v.squeeze() for k, v in encodings.items()}
+    # Convert grayscale or palette images to RGB
+    images = []
+    for img in batch["image"]:
+        if img.mode != "RGB":
+            img = img.convert("RGB")
+        images.append(img)
 
-dataset = dataset.with_transform(preprocess)
+    encodings = processor(images=images, return_tensors="pt")
+    encodings["labels"] = batch["label"]
+    return encodings
 
+dataset = dataset.map(preprocess, batched=True)
 # --------------------------------------------------------------------
 # Metrics
 # --------------------------------------------------------------------
@@ -91,6 +101,7 @@ trainer = Trainer(
     eval_dataset=dataset["val"],
     compute_metrics=compute_metrics,
 )
+
 
 # --------------------------------------------------------------------
 # Train
