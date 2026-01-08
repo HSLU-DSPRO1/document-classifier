@@ -1,0 +1,8 @@
+torch
+transformers
+pillow
+pdf2image
+fastapi
+uvicorn
+scikit-learn
+numpy
