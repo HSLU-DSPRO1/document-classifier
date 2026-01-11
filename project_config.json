@@ -1,0 +1,8 @@
+{
+  "ROOT": "C:\\Users\\viach\\Downloads\\document-classifier-portfolio-v2",
+  "INPUT_DIR": "C:\\Users\\viach\\Downloads\\document-classifier-portfolio-v2\\input",
+  "PROCESSED_DIR": "C:\\Users\\viach\\Downloads\\document-classifier-portfolio-v2\\data\\processed",
+  "MODELS_DIR": "C:\\Users\\viach\\Downloads\\document-classifier-portfolio-v2\\models",
+  "OUTPUTS_DIR": "C:\\Users\\viach\\Downloads\\document-classifier-portfolio-v2\\outputs",
+  "FIG_DIR": "C:\\Users\\viach\\Downloads\\document-classifier-portfolio-v2\\outputs\\figures"
+}

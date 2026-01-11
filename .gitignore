@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+
+# Data/artifacts
+input/*.csv
+input/*.json
+input/*.jsonl
+input/pdfs/*
+!input/pdfs/.gitkeep
+
+data/
+!data/processed/.gitkeep
+
+models/*.pkl
+models/*.joblib
+models/*.json
+!models/.gitkeep
+
+outputs/
+!outputs/figures/.gitkeep
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Model subfolders (keep folders, ignore artifacts)
+models/text_model/**
+models/vision_model/**
+!models/text_model/.gitkeep
+!models/vision_model/.gitkeep
