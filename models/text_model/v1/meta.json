@@ -1,0 +1,27 @@
+{
+  "model": "tfidf_logreg",
+  "vectorizer": {
+    "type": "tfidf",
+    "max_features": null,
+    "ngram_range": [
+      3,
+      5
+    ],
+    "min_df": 3,
+    "max_df": 1.0,
+    "stop_words": null
+  },
+  "classifier": {
+    "type": "logreg",
+    "solver": "lbfgs",
+    "C": 1.0,
+    "class_weight": "balanced",
+    "max_iter": 2000
+  },
+  "classes": [
+    "EMAIL",
+    "INVOICE",
+    "SCIENTIFIC_PAPER"
+  ],
+  "version": "v1"
+}
