@@ -1,0 +1,25 @@
+# Core
+numpy>=1.23
+pandas>=1.5
+
+# Text classification
+scikit-learn>=1.2
+joblib>=1.2
+
+# Vision / Transformers
+torch>=2.0
+torchvision>=0.15
+transformers>=4.36
+datasets>=2.14
+accelerate>=0.25
+
+# File watching / system
+watchdog>=3.0
+
+# PDF & Image handling
+pypdf>=3.9
+pdf2image>=1.16
+Pillow>=10.0
+
+# Visualization (training notebooks)
+matplotlib>=3.7
